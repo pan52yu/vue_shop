@@ -27,8 +27,6 @@
 
 <script>
 import { goLogin } from '@/api/login'
-import { setLocal } from '@/utils/storage'
-import { USERKEYS } from '@/utils/local'
 
 export default {
   name: 'Login',
