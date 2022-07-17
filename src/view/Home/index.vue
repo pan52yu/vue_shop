@@ -20,6 +20,7 @@
           :collapse="isCollapse"
           :collapse-transition="false"
           router
+          :default-active="activePath"
         >
           <!-----  一级菜单 ---->
           <el-submenu v-for="(item,index) in menuList" :key="item.id" :index="item.id + ''">
@@ -31,7 +32,8 @@
               <span>{{ item.authName }}</span>
             </template>
             <!----  二级菜单S  ---->
-            <el-menu-item v-for="subItem in item.children" :key="subItem.id" :index="'/'+subItem.path">
+            <el-menu-item @click="saveNavState('/'+subItem.path)" v-for="subItem in item.children" :key="subItem.id"
+                          :index="'/'+subItem.path">
               <!----  二级菜单的模板区域  ---->
               <template slot="title">
                 <i class="el-icon-menu"></i>
@@ -43,22 +45,20 @@
         </el-menu>
       </el-aside>
       <el-main>
-        <Welcome></Welcome>
+        <router-view></router-view>
       </el-main>
     </el-container>
   </el-container>
 </template>
 
 <script>
-import { removeLocal } from '@/utils/storage'
-import { USERKEYS } from '@/utils/local'
+import { getLocal, removeLocal, setLocal } from '@/utils/storage'
+import { ACTIVEPATH, USERKEYS } from '@/utils/local'
 import { Message } from 'element-ui'
 import { getMenuList } from '@/api/home'
-import Welcome from '@/view/Home/components/welcome'
 
 export default {
   name: 'Home',
-  components: { Welcome },
   data () {
     return {
       menuList: [],
@@ -69,11 +69,13 @@ export default {
         'iconfont icon-danju',
         'iconfont icon-baobiao'
       ],
-      isCollapse: false
+      isCollapse: false,
+      activePath: ''
     }
   },
   created () {
     this.getMenuList()
+    this.activePath = getLocal(ACTIVEPATH)
   },
   methods: {
     async getMenuList () {
@@ -81,13 +83,19 @@ export default {
       this.menuList = data.data
       console.log(data)
     },
+    // 退出
     logout () {
       removeLocal(USERKEYS)
       this.$router.push({ path: '/login' })
       Message.success('退出成功')
     },
+    // 点击切换是否展开
     toggleCollapse () {
       this.isCollapse = !this.isCollapse
+    },
+    saveNavState (active) {
+      setLocal(ACTIVEPATH, active)
+      this.activePath = active
     }
   }
 }
@@ -130,8 +138,8 @@ export default {
       font-size: 10px;
       color: #ffffff;
       text-align: center;
-      line-height: 24px;
-      letter-spacing: 0.2em;
+      line-height: 34px;
+      letter-spacing: 0.4em;
       cursor: pointer;
     }
   }
