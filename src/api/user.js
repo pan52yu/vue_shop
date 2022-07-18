@@ -42,3 +42,21 @@ export const deleteUser = (id) => {
     method: 'DELETE'
   })
 }
+
+// 获取角色列表
+export const getRolesList = () => {
+  return axios({
+    url: 'roles'
+  })
+}
+
+// 分配用户角色
+export const assignUserRoles = (id, rid) => {
+  return axios({
+    url: `users/${id}/role`,
+    method: 'PUT',
+    data: {
+      rid
+    }
+  })
+}

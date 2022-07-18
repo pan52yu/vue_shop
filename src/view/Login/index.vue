@@ -79,9 +79,9 @@ export default {
         if (data.meta.status !== 200) {
           return this.$message.success(data.meta.msg)
         }
-        await this.$router.push('/home')
         this.$message.success('登陆成功')
         this.$store.commit('setUser', data.data.token)
+        await this.$router.push('/home')
       })
     }
   }
