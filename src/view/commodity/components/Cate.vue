@@ -105,7 +105,7 @@
 </template>
 
 <script>
-import { addCategories, getCategoriesList, getCateList } from '@/api/categories'
+import { addCategories, getCategoriesList, getCateList } from '@/api/commodity'
 
 export default {
   name: 'Cate',

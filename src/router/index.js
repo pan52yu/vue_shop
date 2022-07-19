@@ -38,6 +38,10 @@ const routes = [
       {
         path: '/categories',
         component: () => import('@/view/commodity/components/Cate')
+      },
+      {
+        path: '/params',
+        component: () => import('@/view/commodity/components/Params')
       }
     ]
   }
