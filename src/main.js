@@ -7,7 +7,9 @@ import './plugins/element.js'
 import '@/assets/css/global.css'
 // 引入字体图标
 import '@/assets/fonts/iconfont.css'
+import ZkTable from 'vue-table-with-tree-grid'
 
+Vue.component('ZkTable', ZkTable)
 Vue.config.productionTip = false
 new Vue({
   router,

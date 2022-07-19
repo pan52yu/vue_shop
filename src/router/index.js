@@ -34,6 +34,10 @@ const routes = [
       {
         path: '/roles',
         component: () => import('@/view/Power/components/Roles')
+      },
+      {
+        path: '/categories',
+        component: () => import('@/view/commodity/components/Cate')
       }
     ]
   }
