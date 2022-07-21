@@ -81,7 +81,7 @@ export default {
     async getMenuList () {
       const { data } = await getMenuList()
       this.menuList = data.data
-      console.log(data)
+      console.log('menuList菜单列表', data)
     },
     // 退出
     logout () {

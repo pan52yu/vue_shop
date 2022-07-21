@@ -82,3 +82,51 @@ export const delParams = (id, attrId) => {
     method: 'DELETE'
   })
 }
+
+// 获取 商品列表数据
+export const getGoodsList = (queryInfo) => {
+  return axios({
+    url: 'goods',
+    method: 'GET',
+    params: queryInfo
+  })
+}
+
+// 根据 ID删除商品
+export const deleteGoodsById = (id) => {
+  return axios({
+    url: `goods/${id}`,
+    method: 'DELETE'
+  })
+}
+
+// 获取动态参数列表 商品参数
+export const getarticlelist = (id) => {
+  return axios({
+    url: `categories/${id}/attributes`,
+    method: 'GET',
+    params: {
+      sel: 'many'
+    }
+  })
+}
+
+// 获取静态参数列表 商品属性
+export const getStaticParameters = (id) => {
+  return axios({
+    url: `categories/${id}/attributes`,
+    method: 'GET',
+    params: {
+      sel: 'only'
+    }
+  })
+}
+
+// 添加商品
+export const addGoods = (addForm) => {
+  return axios({
+    url: 'goods',
+    method: 'POST',
+    data: addForm
+  })
+}
