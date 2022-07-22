@@ -32,7 +32,24 @@ Authorization: getLocal(USERKEYS)
 
 ### 树形表格组件
 
-> https://github.com/MisterTaki/vue-table-with-tree-grid
+> https://github.com/MisterTaki/vue-table-with-tree-grid  <br />
++ 打开main.js，导入vue-table-with-tree-grid
+```js
+  import TreeTable from 'vue-table-with-tree-grid'
+  //全局注册组件
+  Vue.component('tree-table', TreeTable)
+```
++ 使用组件展示分类数据
+```js
+<!-- 分类表格
+:data(设置数据源) :columns(设置表格中列配置信息) :selection-type(是否有复选框)
+:expand-type(是否展开数据) show-index(是否设置索引列) index-text(设置索引列头)
+border(是否添加纵向边框) :show-row-hover(是否鼠标悬停高亮) -->
+    
+<tree-table :data="cateList" :columns="columns" :selection-type="false"
+:expand-type="false" show-index index-text="#" border :show-row-hover="false">
+</tree-table>
+```
 
 ### 富文本编辑器
 
