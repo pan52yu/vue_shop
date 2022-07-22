@@ -17,15 +17,16 @@ el-upload 可以配置 headers 属性 绑定对象
 
 <el-upload action="http://liufusong.top:8899/api/private/v1/upload" :headers="headerObj">
 </el-upload>
-
+<script>
 // 图片上传的请求头对象
 data () {
-return:{
-headerObj: {
-Authorization: getLocal(USERKEYS)
+  return:{
+    headerObj: {
+      Authorization: getLocal(USERKEYS)
+    }
+  }
 }
-}
-}
+</script>
 ```
 
 ## 第三方插件
