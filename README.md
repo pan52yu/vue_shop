@@ -30,7 +30,9 @@ Authorization: getLocal(USERKEYS)
 
 ## 第三方插件
 
-### https://github.com/MisterTaki/vue-table-with-tree-grid
+### 树形表格组件
+
+> https://github.com/MisterTaki/vue-table-with-tree-grid
 
 ### 富文本编辑器
 
