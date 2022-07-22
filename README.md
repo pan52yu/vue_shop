@@ -39,7 +39,7 @@ Authorization: getLocal(USERKEYS)
 ### lodash
 
 - lodash 中文文档
-    - https://www.lodashjs.com/docs/lodash.cloneDeep#_clonedeepvalue
+    - > https://www.lodashjs.com/docs/lodash.cloneDeep#_clonedeepvalue
 - `yarn add --save lodash`
 - lodash merge 合并
 
