@@ -21,7 +21,7 @@ const routes = [
     children: [
       {
         path: '/welcome',
-        component: () => import('@/view/Home/components/welcome')
+        component: () => import('@/view/Home/components/Welcome')
       },
       {
         path: '/users',
@@ -54,11 +54,11 @@ const routes = [
       },
       {
         path: '/orders',
-        component: () => import('@/view/Order/Order')
+        component: () => import('@/view/Order')
       },
       {
         path: '/reports',
-        component: () => import('@/view/Report/Report')
+        component: () => import('@/view/Report')
       }
     ]
   }
