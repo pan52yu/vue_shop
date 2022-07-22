@@ -10,8 +10,9 @@ axios.interceptors.request.use((config) => {
 });
 ```
 
+### element 组件使用相关问题
 使用 element 组件时
-el-upload 可以配置 headers 属性 绑定对象
+`el-upload` 可以配置 headers 属性 绑定对象
 
 ```vue
 
