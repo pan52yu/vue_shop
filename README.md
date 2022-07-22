@@ -37,6 +37,7 @@ Authorization: getLocal(USERKEYS)
 ### 富文本编辑器
 
 > Vue-Quill-Editor
+> https://github.com/surmon-china/vue-quill-editor
 
 ### lodash
 
